@@ -3,7 +3,7 @@ INDIGOLIB = ../indigo_libs
 all: indigo_py_adapter.o _indigo_bus.so _indigo_client.so
 
 indigo_py_adapter.o: indigo_py_adapter.c
-	gcc -fPIC -DINDIGO_LINUX -I.. -c indigo_py_adapter.c
+	gcc -fPIC -DINDIGO_LINUX -I${INDIGOLIB} -c indigo_py_adapter.c
 
 _indigo_bus.so:	indigo_bus.i
 	swig -python -I${INDIGOLIB} indigo_bus.i
